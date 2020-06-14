@@ -5,6 +5,7 @@ import {BrowserRouter as Router,
         Route } from "react-router-dom";
 
 import StartGame from "./components/StartGame";
+import GameRound from "./components/GameRound/GameRound";
 
 const App = () => (
   <React.Fragment>
@@ -12,6 +13,9 @@ const App = () => (
       <Switch>
         <Route exact path="/">
           <StartGame />
+        </Route>
+        <Route exact path="/round1">
+          <GameRound />
         </Route>
       </Switch>
     </Router>
