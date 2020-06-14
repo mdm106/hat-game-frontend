@@ -31,6 +31,7 @@ const timeOn = (state, {words}) => {
 const increaseScore = (state, {score_1, score_2}) => {
     return {
         ...state,
+        wordNumber: state.wordNumber < state.words.length - 1 ? state.wordNumber + 1 : 0,
         score_1,
         score_2,
     }
