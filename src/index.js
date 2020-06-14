@@ -2,7 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { createStore } from "redux";
+
+
+const initial = {
+  timerActive: false,
+};
+
+const store = createStore(
+  reducer,
+  initial,
+  window.__REDUX_DEVTOOLS_EXTENSION__
+    && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
   <React.StrictMode>
