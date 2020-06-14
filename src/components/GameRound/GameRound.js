@@ -6,6 +6,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
+import Alert from 'react-bootstrap/Alert';
 
 const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerOn }) => {
     return (
@@ -13,6 +14,9 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerO
             <Jumbotron>
                 <h1>Round: Science</h1>
             </Jumbotron>
+            <Alert variant="info">
+                <h1 style={{textAlign: "center"}}>Word</h1>
+            </Alert>
             <CardGroup>
                 <Card>
                     <Card.Body>
