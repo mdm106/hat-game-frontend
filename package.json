@@ -13,6 +13,7 @@
     "react-scripts": "3.4.1",
     "react-timecode": "^1.1.23",
     "react-timer-wrapper": "^0.4.0",
+    "redux": "^4.0.5",
     "typescript": "^3.9.5"
   },
   "scripts": {
