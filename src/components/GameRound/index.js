@@ -2,26 +2,27 @@ import { connect } from "react-redux";
 
 import GameRound from "./GameRound";
 
-import { timeOn } from "../../data/actions/state";
+import { getWords } from "../../data/actions/api";
 // mapStateToProps: maps the current state (from the store)
 // to the props that get passed into the wrapped component
 // needs to return an object literal which gets merged in
 // to any other props being passed in
- const mapStateToProps = ({ timerActive, team_1, team_2, score_1, score_2, words }) => {
+ const mapStateToProps = ({ timerActive, team_1, team_2, score_1, score_2, words, wordNumber }) => {
   return {
     timerActive,
     team_1,
     team_2,
     score_1,
     score_2,
-    words   
+    words,
+    wordNumber, 
     };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     handleTimerOn: () => {
-        dispatch(timeOn())
+        dispatch(getWords())
     }
   };
 };

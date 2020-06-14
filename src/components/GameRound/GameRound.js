@@ -8,14 +8,14 @@ import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import Alert from 'react-bootstrap/Alert';
 
-const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerOn, words }) => {
+const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerOn, words, wordNumber }) => {
     return (
         <>
             <Jumbotron>
                 <h1>Round: Science</h1>
             </Jumbotron>
             <Alert variant="info">
-                <h1 style={{textAlign: "center"}}>Word</h1>
+                <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{words[wordNumber]}</h3>
             </Alert>
             <CardGroup>
                 <Card>
@@ -40,7 +40,7 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerO
                 </Card>
             </CardGroup>
             <div className="container">
-                <Timer active={timerActive} duration="45000">
+                <Timer active={timerActive} duration={45000}>
                     <Timecode />
                 </Timer>
                 <Button variant="success" onClick={handleTimerOn}>Go</Button>{' '}
