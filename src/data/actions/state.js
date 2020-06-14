@@ -12,3 +12,9 @@ export const incrementScore = ( {score_1, score_2 }) => {
         score_2,
     }
 }
+
+export const changeWord = () => {
+    return {
+        type: "PASS",
+    };
+}

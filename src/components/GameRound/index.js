@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import GameRound from "./GameRound";
 
 import { getWords, patchScore } from "../../data/actions/api";
+import { changeWord } from "../../data/actions/state";
 // mapStateToProps: maps the current state (from the store)
 // to the props that get passed into the wrapped component
 // needs to return an object literal which gets merged in
@@ -26,6 +27,9 @@ const mapDispatchToProps = dispatch => {
     },
     handleIncrement: (team) => {
         dispatch(patchScore(team))
+    },
+    handlePass: () => {
+        dispatch(changeWord())
     }
   };
 };

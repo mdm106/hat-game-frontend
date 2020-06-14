@@ -37,11 +37,19 @@ const increaseScore = (state, {score_1, score_2}) => {
     }
 }
 
+const passWordChange = (state) => {
+    return {
+        ...state,
+        wordNumber: state.wordNumber < state.words.length - 1 ? state.wordNumber + 1 : 0,
+    }
+}
+
 
 const reducer = (state, action) => {
     switch (action.type) {
       case "TIME_ON": return timeOn(state, action);
       case "INCREMENT_SCORE": return increaseScore(state, action);
+      case "PASS": return passWordChange(state);
       default: return state;
     }
 }

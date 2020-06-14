@@ -8,7 +8,7 @@ import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import Alert from 'react-bootstrap/Alert';
 
-const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, words, wordNumber, handleTimerOn, handleIncrement }) => {
+const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, words, wordNumber, handleTimerOn, handleIncrement, handlePass }) => {
     return (
         <>
             <Jumbotron>
@@ -25,7 +25,7 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, words, wordN
                     </Card.Body>
                     <Card.Footer>
                         <Button variant="primary" onClick={() => handleIncrement(1)}>Correct</Button>{' '}
-                        <Button variant="danger">Pass</Button>
+                        <Button variant="danger" onClick={handlePass}>Pass</Button>
                     </Card.Footer>
                 </Card>
                 <Card>
@@ -35,7 +35,7 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, words, wordN
                     </Card.Body>
                     <Card.Footer>
                         <Button variant="primary" onClick={() => handleIncrement(2)}>Correct</Button>{' '}
-                        <Button variant="danger">Pass</Button>
+                        <Button variant="danger" onClick={handlePass}>Pass</Button>
                     </Card.Footer>
                 </Card>
             </CardGroup>
