@@ -5,7 +5,7 @@ import {BrowserRouter as Router,
         Route } from "react-router-dom";
 
 import StartGame from "./components/StartGame";
-import GameRound from "./components/GameRound/GameRound";
+import GameRound from "./components/GameRound";
 
 const App = () => (
   <React.Fragment>

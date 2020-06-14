@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 
-const GameRound = () => {
+const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerOn }) => {
     return (
         <>
             <Jumbotron>
@@ -36,10 +36,10 @@ const GameRound = () => {
                 </Card>
             </CardGroup>
             <div className="container">
-                <Timer active={false} duration="45000">
+                <Timer active={timerActive} duration="45000">
                     <Timecode />
                 </Timer>
-                <Button variant="success">Go</Button>
+                <Button variant="success" onClick={handleTimerOn}>Go</Button>
             </div>
         </>
     )
