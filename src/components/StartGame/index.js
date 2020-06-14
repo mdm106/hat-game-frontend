@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 
 import StartGame from "./StartGame";
 
+import history from "../../history";
 import { postGame } from "../../data/actions/api";
 
 const mapStateToProps = ({ team_1, team_2 }) => {
@@ -15,6 +16,8 @@ const mapDispatchToProps = dispatch => {
   return {
     handleStartGame: (data) => {
         dispatch(postGame(data));
+
+        history.push("/round1");
     }
   };
 };

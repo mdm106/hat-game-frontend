@@ -1,6 +1,8 @@
 import React from "react";
 
-import {BrowserRouter as Router,
+import history from "./history";
+
+import {Router,
         Switch,
         Route } from "react-router-dom";
 
@@ -9,7 +11,7 @@ import GameRound from "./components/GameRound";
 
 const App = () => (
   <React.Fragment>
-    <Router>
+    <Router history={history}>
       <Switch>
         <Route exact path="/">
           <StartGame />
