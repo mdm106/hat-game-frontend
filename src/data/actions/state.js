@@ -18,3 +18,12 @@ export const changeWord = () => {
         type: "PASS",
     };
 }
+
+export const startGame = ( { team_1, team_2, id }) => {
+    return {
+        type: "START_GAME",
+        team_1,
+        team_2,
+        id,
+    }
+}

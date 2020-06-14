@@ -1,6 +1,6 @@
 import axios from "../../axios";
 
-import { timeOn, incrementScore } from "./state";
+import { timeOn, incrementScore, startGame } from "./state";
 
 export const getWords = () => {
     return (dispatch) => {
@@ -19,3 +19,19 @@ export const patchScore = (team) => {
         })
     };
 }
+
+export const postGame = ({ team_1, team_2 }) => {
+    return (dispatch) => {
+        axios.post('/games', {
+            team_1,
+            team_2,
+            score_1: 0,
+            score_2: 0,
+            complete: false,
+        }).then(({ data }) => {
+            dispatch(startGame(data.data));
+        })
+    };
+}
+ 
+

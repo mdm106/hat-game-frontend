@@ -1,5 +1,14 @@
 import initial from './initial';
 
+const gameStart = (state, {team_1, team_2, id}) => {
+    return {
+        ...state,
+        team_1,
+        team_2,
+        id,
+    }
+}
+
 // below shuffle function obtained from https://github.com/coolaj86/knuth-shuffle
 const shuffle = (array) => {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -47,6 +56,7 @@ const passWordChange = (state) => {
 
 const reducer = (state, action) => {
     switch (action.type) {
+      case "START_GAME": return gameStart(state, action);
       case "TIME_ON": return timeOn(state, action);
       case "INCREMENT_SCORE": return increaseScore(state, action);
       case "PASS": return passWordChange(state);

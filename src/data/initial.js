@@ -1,5 +1,5 @@
 const initial = {
-    id: "10",
+    id: "",
     team_1: "",
     team_2: "",
     score_1: 0,
