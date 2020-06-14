@@ -28,10 +28,19 @@ const timeOn = (state, {words}) => {
     }
 }
 
+const increaseScore = (state, {score_1, score_2}) => {
+    return {
+        ...state,
+        score_1,
+        score_2,
+    }
+}
+
 
 const reducer = (state, action) => {
     switch (action.type) {
       case "TIME_ON": return timeOn(state, action);
+      case "INCREMENT_SCORE": return increaseScore(state, action);
       default: return state;
     }
 }

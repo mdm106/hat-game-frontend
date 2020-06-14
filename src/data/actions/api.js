@@ -1,6 +1,6 @@
 import axios from "../../axios";
 
-import { timeOn } from "./state";
+import { timeOn, incrementScore } from "./state";
 
 export const getWords = () => {
     return (dispatch) => {
@@ -8,4 +8,14 @@ export const getWords = () => {
             dispatch(timeOn(data.data));
         })
     }
+}
+
+export const patchScore = (team) => {
+    return (dispatch, getState) => {
+        axios.patch(`games/${getState().id}/score`, {
+            team: team,
+        }).then(({ data }) => {
+            dispatch(incrementScore(data.data));
+        })
+    };
 }

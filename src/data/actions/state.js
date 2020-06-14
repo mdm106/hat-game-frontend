@@ -4,3 +4,11 @@ export const timeOn = ( data ) => {
         words: data,
     };
 };
+
+export const incrementScore = ( {score_1, score_2 }) => {
+    return {
+        type: "INCREMENT_SCORE",
+        score_1,
+        score_2,
+    }
+}
