@@ -24,7 +24,7 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerO
                         <Card.Text className="display-1">0</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary">Correct</Button>
+                        <Button variant="primary">Correct</Button>{' '}
                         <Button variant="danger">Pass</Button>
                     </Card.Footer>
                 </Card>
@@ -34,7 +34,7 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerO
                         <Card.Text className="display-1">0</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="primary">Correct</Button>
+                        <Button variant="primary">Correct</Button>{' '}
                         <Button variant="danger">Pass</Button>
                     </Card.Footer>
                 </Card>
@@ -43,7 +43,8 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerO
                 <Timer active={timerActive} duration="45000">
                     <Timecode />
                 </Timer>
-                <Button variant="success" onClick={handleTimerOn}>Go</Button>
+                <Button variant="success" onClick={handleTimerOn}>Go</Button>{' '}
+                <Button variant="info">Reset</Button>
             </div>
         </>
     )
