@@ -8,7 +8,7 @@ import Timer from 'react-timer-wrapper';
 import Timecode from 'react-timecode';
 import Alert from 'react-bootstrap/Alert';
 
-const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerOn }) => {
+const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, handleTimerOn, words }) => {
     return (
         <>
             <Jumbotron>

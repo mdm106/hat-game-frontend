@@ -7,13 +7,14 @@ import { timeOn } from "../../data/actions/state";
 // to the props that get passed into the wrapped component
 // needs to return an object literal which gets merged in
 // to any other props being passed in
- const mapStateToProps = ({ timerActive, team_1, team_2, score_1, score_2 }) => {
+ const mapStateToProps = ({ timerActive, team_1, team_2, score_1, score_2, words }) => {
   return {
     timerActive,
     team_1,
     team_2,
     score_1,
-    score_2    
+    score_2,
+    words   
     };
 };
 

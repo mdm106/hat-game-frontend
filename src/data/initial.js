@@ -6,6 +6,7 @@ const initial = {
     score_2: 0,
     complete: false,
     timerActive: false,
+    words: [],
 };
 
 export default initial;
