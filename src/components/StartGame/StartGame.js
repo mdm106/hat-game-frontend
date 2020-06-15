@@ -40,7 +40,7 @@ class StartGame extends Component {
         return (
             <>
                 <Jumbotron>
-                    <h1>Hat Game</h1>
+                    <h1>The Great Hat Game</h1>
                     <p>Enter team details to start the game</p>
                 </Jumbotron>
                 <div className="container">
