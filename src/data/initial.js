@@ -10,7 +10,6 @@ const initial = {
     geography: [],
     object: [],
     wordNumber: 0,
-    timerTotal: 45,
     category: "",
     categories: [],
 };
