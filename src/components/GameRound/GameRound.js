@@ -20,12 +20,12 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
         }
     }
 
-    let categoryPicker= (category) => {
+    let categoryPicker= (category, science, celebrities, geography, object, wordNumber) => {
         switch (category) {
-            case 1: return science[wordNumber]
-            case 2: return celebrities[wordNumber]
-            case 3: return geography[wordNumber]
-            case 4: return object[wordNumber]
+            case 1: return science[wordNumber[0]]
+            case 2: return celebrities[wordNumber[1]]
+            case 3: return geography[wordNumber[2]]
+            case 4: return object[wordNumber[3]]
             default: return "";
         }
     }
@@ -35,7 +35,7 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
             <GameSetUp />
             <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
             <Alert variant="info">
-                <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category)}</h3>
+                <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, wordNumber)}</h3>
             </Alert>
             <CardGroup>
                 <Card>
