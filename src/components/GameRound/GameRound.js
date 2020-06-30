@@ -4,11 +4,11 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
-import Timer from 'react-timer-wrapper';
+import Timer from '../Timer/Timer';
 import Timecode from 'react-timecode';
 import Alert from 'react-bootstrap/Alert';
 
-const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, words, wordNumber, handleTimerOn, handleIncrement, handlePass }) => {
+const GameRound = ({ team_1, team_2, score_1, score_2, words, wordNumber, handleTimerOn, handleIncrement, handlePass, timerTotal }) => {
     return (
         <>
             <Jumbotron>
@@ -40,11 +40,7 @@ const GameRound = ({ timerActive, team_1, team_2, score_1, score_2, words, wordN
                 </Card>
             </CardGroup>
             <div className="container">
-                <Timer active={timerActive} duration={45000}>
-                    <Timecode />
-                </Timer>
-                <Button variant="success" onClick={handleTimerOn}>Go</Button>{' '}
-                <Button variant="info">Reset</Button>
+                <Timer timerTotal={timerTotal} starter={handleTimerOn} />
             </div>
         </>
     )

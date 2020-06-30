@@ -32,7 +32,6 @@ const shuffle = (array) => {
 const timeOn = (state, {words}) => {
     return {
         ...state,
-        timerActive: true,
         words: shuffle(words.map((val, i) => val.word)),
     }
 }

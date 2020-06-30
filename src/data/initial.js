@@ -5,9 +5,9 @@ const initial = {
     score_1: 0,
     score_2: 0,
     complete: false,
-    timerActive: false,
     words: [],
     wordNumber: 0,
+    timerTotal: 10,
 };
 
 export default initial;
