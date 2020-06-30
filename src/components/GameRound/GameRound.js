@@ -5,17 +5,26 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import Timer from '../Timer/Timer';
-import Timecode from 'react-timecode';
 import Alert from 'react-bootstrap/Alert';
+import GameSetUp from '../GameSetUp';
 
-const GameRound = ({ team_1, team_2, score_1, score_2, words, wordNumber, handleTimerOn, handleIncrement, handlePass, timerTotal }) => {
+const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geography, object, wordNumber, category, handleTimerOn, handleIncrement, handlePass, timerTotal }) => {
+
+    let categoryPicker= (category) => {
+        switch (category) {
+            case "1": return science[wordNumber];
+            case "2": return celebrities[wordNumber];
+            case "3": return geography[wordNumber]
+            case "4": return object[wordNumber]
+            default: return "";
+        }
+    }
+
     return (
         <>
-            <Jumbotron>
-                <h1>Round: Science</h1>
-            </Jumbotron>
+            <GameSetUp />
             <Alert variant="info">
-                <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{words[wordNumber]}</h3>
+                <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category)}</h3>
             </Alert>
             <CardGroup>
                 <Card>

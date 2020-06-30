@@ -1,14 +1,20 @@
 import axios from "../../axios";
 
-import { timeOn, incrementScore, startGame } from "./state";
+import { setCategory, incrementScore, startGame, updateCategory } from "./state";
 
-export const getWords = () => {
-    return (dispatch) => {
-        axios.get('/categories/1/words').then(({ data }) => {
-            dispatch(timeOn(data.data));
-        })
+export const getWords = (category) => (dispatch, getState) => {
+    const isGot = getState().categories.find(element => element===category);
+    
+    if (!isGot) {
+        axios.get(`/categories/${category}/words`).then(({ data }) => {
+            dispatch(setCategory(data.data, category));
+        });
     }
-}
+
+    if (isGot) {
+        dispatch(updateCategory(category));
+    }
+};
 
 export const patchScore = (team) => {
     return (dispatch, getState) => {

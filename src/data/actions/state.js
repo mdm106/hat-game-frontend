@@ -1,9 +1,17 @@
-export const timeOn = ( data ) => {
+export const setCategory = ( data, category ) => {
     return {
-        type: "TIME_ON",
+        type: "CATEGORY_SET",
         words: data,
+        category: category,
     };
 };
+
+export const updateCategory = (category) => {
+    return {
+        type: "CATEGORY_UPDATE",
+        category: category,
+    }
+}
 
 export const incrementScore = ( {score_1, score_2 }) => {
     return {

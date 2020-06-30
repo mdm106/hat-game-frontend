@@ -5,9 +5,14 @@ const initial = {
     score_1: 0,
     score_2: 0,
     complete: false,
-    words: [],
+    science: [],
+    celebrities: [],
+    geography: [],
+    object: [],
     wordNumber: 0,
     timerTotal: 45,
+    category: "",
+    categories: [],
 };
 
 export default initial;

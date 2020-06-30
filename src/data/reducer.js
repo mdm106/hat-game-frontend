@@ -29,10 +29,49 @@ const shuffle = (array) => {
   return array;
 }
 
-const timeOn = (state, {words}) => {
+const categoryOn = (state, {words, category}) => {
+    let shuffledWords = shuffle(words.map((val, i) => val.word));
+    let newCategories = state.categories;
+    newCategories.push(category);
+    if(category===1){
+        return {
+            ...state,
+            science: shuffledWords,
+            categories: newCategories,
+            category: category,
+        }
+    } else if (category===2){
+        return {
+            ...state,
+            celebrities: shuffledWords,
+            categories: newCategories,
+            category: category,
+        }
+    } else if (category===3){
+        return {
+            ...state,
+            geography: shuffledWords,
+            categories: newCategories,
+            category: category,
+        }
+    } else if (category===4){
+        return {
+            ...state,
+            object: shuffledWords,
+            categories: newCategories,
+            category: category,
+        }
+    } else {
+        return {
+            ...state,
+        }
+    }
+}
+
+const categoryUpdate = (state, {category}) => {
     return {
         ...state,
-        words: shuffle(words.map((val, i) => val.word)),
+        category,
     }
 }
 
@@ -56,7 +95,8 @@ const passWordChange = (state) => {
 const reducer = (state, action) => {
     switch (action.type) {
       case "START_GAME": return gameStart(state, action);
-      case "TIME_ON": return timeOn(state, action);
+      case "CATEGORY_SET": return categoryOn(state, action);
+      case "CATEGORY_UPDATE": return categoryUpdate(state, action);
       case "INCREMENT_SCORE": return increaseScore(state, action);
       case "PASS": return passWordChange(state);
       default: return state;
