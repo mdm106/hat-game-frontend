@@ -61,11 +61,7 @@ const categoryOn = (state, {words, category}) => {
             categories: newCategories,
             category: category,
         }
-    } else {
-        return {
-            ...state,
-        }
-    }
+    } 
 }
 
 const categoryUpdate = (state, {category}) => {
@@ -75,29 +71,61 @@ const categoryUpdate = (state, {category}) => {
     }
 }
 
-let wordIncreaser = (wordNumber, category) => {
-    let newWordNumber = wordNumber;
-    newWordNumber[category-1] += 1;
-    if(newWordNumber[category-1] > 10) {
-        newWordNumber[category-1] = 0;
-    }
-    return newWordNumber;
-}
 
 const increaseScore = (state, {score_1, score_2}) => { 
-    return {
-        ...state,
-        wordNumber: wordIncreaser(state.wordNumber, state.category),
-        score_1,
-        score_2,
-    }
+    if(state.category===1){
+        return {
+            ...state,
+            score_1,
+            score_2,
+            scienceNumber: state.scienceNumber + 1
+        }
+    } else if (state.category===2){
+        return {
+            ...state,
+            score_1,
+            score_2,
+            celebrityNumber: state.celebrityNumber + 1
+        }
+    } else if (state.category===3){
+        return {
+            ...state,
+            score_1,
+            score_2,
+            geographyNumber: state.geographyNumber + 1
+        }
+    } else if (state.category===4){
+        return {
+            ...state,
+            score_1,
+            score_2,
+            objectNumber: state.objectNumber + 1
+        }
+    } 
 }
 
 const passWordChange = (state) => {
-     return {
-        ...state,
-        wordNumber: wordIncreaser(state.wordNumber, state.category),
-    }
+    if(state.category===1){
+        return {
+            ...state,
+            scienceNumber: state.scienceNumber + 1
+        }
+    } else if (state.category===2){
+        return {
+            ...state,
+            celebrityNumber: state.celebrityNumber + 1
+        }
+    } else if (state.category===3){
+        return {
+            ...state,
+            geographyNumber: state.geographyNumber + 1
+        }
+    } else if (state.category===4){
+        return {
+            ...state,
+            objectNumber: state.objectNumber + 1
+        }
+    } 
 }
 
 
