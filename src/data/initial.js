@@ -9,7 +9,7 @@ const initial = {
     celebrities: [],
     geography: [],
     object: [],
-    wordNumber: 0,
+    wordNumber: [0, 0, 0, 0],
     category: "",
     categories: [],
 };
