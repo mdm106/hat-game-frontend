@@ -33,10 +33,22 @@ const Timer = ({ timerTotal, starter }) => {
         return () => clearInterval(interval);
     }, [isActive, seconds]);
 
+    let setTimeShown = (seconds) => {
+        let timeShown = "0:00";
+        if(seconds < 10) {
+            timeShown = `0:0${seconds}`;
+        } else if (seconds < 59) {
+            timeShown = `0:${seconds}`
+        } else {
+            timeShown = `01:00`;
+        }
+        return timeShown;
+    }    
+
     return (
         <div className="container">
           <div>
-            {seconds}s
+            {setTimeShown(seconds)}
           </div>
           <div>
             {seconds===timerTotal ?  

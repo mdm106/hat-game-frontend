@@ -7,7 +7,7 @@ const initial = {
     complete: false,
     words: [],
     wordNumber: 0,
-    timerTotal: 10,
+    timerTotal: 45,
 };
 
 export default initial;
