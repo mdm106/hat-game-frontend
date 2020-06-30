@@ -10,12 +10,22 @@ import GameSetUp from '../GameSetUp';
 
 const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geography, object, wordNumber, category, handleTimerOn, handleIncrement, handlePass, timerTotal }) => {
 
+    let titlePicker= (category) => {
+        switch (category) {
+            case 1: return "Science"
+            case 2: return "Celebrities"
+            case 3: return "Geography"
+            case 4: return "Object"
+            default: return "";
+        }
+    }
+
     let categoryPicker= (category) => {
         switch (category) {
-            case "1": return science[wordNumber];
-            case "2": return celebrities[wordNumber];
-            case "3": return geography[wordNumber]
-            case "4": return object[wordNumber]
+            case 1: return science[wordNumber]
+            case 2: return celebrities[wordNumber]
+            case 3: return geography[wordNumber]
+            case 4: return object[wordNumber]
             default: return "";
         }
     }
@@ -23,6 +33,7 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
     return (
         <>
             <GameSetUp />
+            <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
             <Alert variant="info">
                 <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category)}</h3>
             </Alert>
