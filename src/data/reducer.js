@@ -75,19 +75,39 @@ const categoryUpdate = (state, {category}) => {
     }
 }
 
+
+
 const increaseScore = (state, {score_1, score_2}) => {
+    let categoryNamePicker= (category) => {
+        switch (category) {
+            case 1: return state.science.length
+            case 2: return state.celebrities.length
+            case 3: return state.geography.length
+            case 4: return state.object.length
+            default: return "";
+        }
+    }
     return {
         ...state,
-        wordNumber: state.wordNumber < state.words.length - 1 ? state.wordNumber + 1 : 0,
+        wordNumber: state.wordNumber < categoryNamePicker(state.category) - 1 ? state.wordNumber + 1 : 0,
         score_1,
         score_2,
     }
 }
 
 const passWordChange = (state) => {
+    let categoryNamePicker= (category) => {
+        switch (category) {
+            case 1: return state.science.length
+            case 2: return state.celebrities.length
+            case 3: return state.geography.length
+            case 4: return state.object.length
+            default: return "";
+        }
+    }
     return {
         ...state,
-        wordNumber: state.wordNumber < state.words.length - 1 ? state.wordNumber + 1 : 0,
+        wordNumber: state.wordNumber < categoryNamePicker(state.category) - 1 ? state.wordNumber + 1 : 0,
     }
 }
 
