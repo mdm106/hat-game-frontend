@@ -78,28 +78,28 @@ const increaseScore = (state, {score_1, score_2}) => {
             ...state,
             score_1,
             score_2,
-            scienceNumber: state.scienceNumber + 1
+            scienceNumber: state.scienceNumber + 1 < state.science.length ? state.scienceNumber + 1 : 0,
         }
     } else if (state.category===2){
         return {
             ...state,
             score_1,
             score_2,
-            celebrityNumber: state.celebrityNumber + 1
+            celebrityNumber: state.celebrityNumber + 1 < state.celebrities.length ? state.celebrityNumber + 1 : 0,
         }
     } else if (state.category===3){
         return {
             ...state,
             score_1,
             score_2,
-            geographyNumber: state.geographyNumber + 1
+            geographyNumber: state.geographyNumber + 1 < state.geography.length ? state.geographyNumber + 1 : 0,
         }
     } else if (state.category===4){
         return {
             ...state,
             score_1,
             score_2,
-            objectNumber: state.objectNumber + 1
+            objectNumber: state.objectNumber + 1 < state.object.length ? state.objectNumber + 1 : 0,
         }
     } 
 }
@@ -108,22 +108,22 @@ const passWordChange = (state) => {
     if(state.category===1){
         return {
             ...state,
-            scienceNumber: state.scienceNumber + 1
+            scienceNumber: state.scienceNumber + 1 < state.science.length ? state.scienceNumber + 1 : 0,
         }
     } else if (state.category===2){
         return {
             ...state,
-            celebrityNumber: state.celebrityNumber + 1
+            celebrityNumber: state.celebrityNumber + 1 < state.celebrities.length ? state.celebrityNumber + 1 : 0,
         }
     } else if (state.category===3){
         return {
             ...state,
-            geographyNumber: state.geographyNumber + 1
+            geographyNumber: state.geographyNumber + 1 < state.geography.length ? state.geographyNumber + 1 : 0,
         }
     } else if (state.category===4){
         return {
             ...state,
-            objectNumber: state.objectNumber + 1
+            objectNumber: state.objectNumber + 1 < state.object.length ? state.objectNumber + 1 : 0,
         }
     } 
 }
