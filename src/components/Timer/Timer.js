@@ -2,14 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import Button from 'react-bootstrap/Button';
 
-const Timer = ({ timerTotal, starter }) => {
+const Timer = ({ timerTotal }) => {
     const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
     let toggle = () => {
-        if(seconds===0) {
-            starter();
-        }
         setIsActive(!isActive);
     }
 

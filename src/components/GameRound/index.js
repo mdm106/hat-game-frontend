@@ -26,9 +26,6 @@ import { changeWord } from "../../data/actions/state";
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleTimerOn: () => {
-        dispatch(getWords())
-    },
     handleIncrement: (team) => {
         dispatch(patchScore(team))
     },

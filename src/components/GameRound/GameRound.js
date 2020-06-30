@@ -8,7 +8,7 @@ import Timer from '../Timer/Timer';
 import Alert from 'react-bootstrap/Alert';
 import GameSetUp from '../GameSetUp';
 
-const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geography, object, wordNumber, category, handleTimerOn, handleIncrement, handlePass, timerTotal }) => {
+const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geography, object, wordNumber, category, handleIncrement, handlePass, timerTotal }) => {
 
     let titlePicker= (category) => {
         switch (category) {
@@ -60,7 +60,7 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                 </Card>
             </CardGroup>
             <div className="container">
-                <Timer timerTotal={45} starter={handleTimerOn} />
+                <Timer timerTotal={45} />
             </div>
         </>
     )
