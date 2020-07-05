@@ -16,7 +16,7 @@ const App = () => (
         <Route exact path="/">
           <StartGame />
         </Route>
-        <Route exact path="/round1">
+        <Route exact path="/round">
           <GameRound />
         </Route>
       </Switch>
