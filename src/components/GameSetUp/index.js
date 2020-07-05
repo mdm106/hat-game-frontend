@@ -4,12 +4,6 @@ import GameSetUp from "./GameSetUp";
 
 import { getWords } from "../../data/actions/api";
 
-const mapStateToProps = ({ timerTotal }) => {
-    return {
-        timerTotal
-      };
-  };
-
 const mapDispatchToProps = dispatch => {
   return {
     handleGameSetUp: (data) => {
@@ -22,4 +16,4 @@ const mapDispatchToProps = dispatch => {
 // use the connect function to connect mapStateToProps
 // to the React component we want to wrap
 // returns a new React component
-export default connect(mapStateToProps, mapDispatchToProps)(GameSetUp);
+export default connect(null, mapDispatchToProps)(GameSetUp);

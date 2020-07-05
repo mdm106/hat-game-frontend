@@ -8,9 +8,8 @@ import { changeWord } from "../../data/actions/state";
 // to the props that get passed into the wrapped component
 // needs to return an object literal which gets merged in
 // to any other props being passed in
- const mapStateToProps = ({ timerTotal, team_1, team_2, score_1, score_2, scienceNumber, celebrityNumber, geographyNumber, objectNumber, category, science, celebrities, geography, object }) => {
+ const mapStateToProps = ({ team_1, team_2, score_1, score_2, scienceNumber, celebrityNumber, geographyNumber, objectNumber, category, science, celebrities, geography, object }) => {
   return {
-    timerTotal,
     team_1,
     team_2,
     score_1,

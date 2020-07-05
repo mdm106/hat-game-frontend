@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Button from 'react-bootstrap/Button';
 
-const Timer = ({ timerTotal }) => {
+const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
@@ -48,7 +48,7 @@ const Timer = ({ timerTotal }) => {
             {setTimeShown(seconds)}
           </div>
           <div>
-            {seconds===timerTotal ?  
+            {seconds=== 45?  
             <p>Time's Up</p> : 
             <Button variant="success" onClick={toggle}>
               {isActive ? 'Pause' : 'Start'}
