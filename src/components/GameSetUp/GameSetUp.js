@@ -32,7 +32,7 @@ class GameSetUp extends Component {
                 <div className="container">
                     <Form onSubmit={ this.handleSubmit }>
                         <Form.Group controlId="exampleForm.ControlSelect1">
-                            <Form.Label>Example select</Form.Label>
+                            <Form.Label>Select subject:</Form.Label>
                             <Form.Control as="select" value={category} onChange={this.handleCategory}>
                                 <option value={""}></option>
                                 <option value={"1"}>Science</option>
