@@ -34,7 +34,7 @@ const Timer = () => {
             clearInterval(interval);
         }
         return () => clearInterval(interval);
-    }, [isActive, seconds]);
+    }, [isActive, seconds, play]);
 
     let setTimeShown = (seconds) => {
         let timeShown = "0:00";
