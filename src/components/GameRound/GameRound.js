@@ -52,10 +52,14 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
 
 
     return (
-        <div style={{backgroundColor: backgroundColorPicker(category), height: "100vh", width: "100vw"}}>
+        <div style={{backgroundColor: backgroundColorPicker(category), 
+                     height: "100vh",
+                     width: "100vw"}}>
                 <div className="container">
                 <GameSetUp />
-                <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
+                <h3 style={{textAlign: "center", 
+                            marginBottom: "1rem"}}>
+                    {category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
                 {category === "" ? null :
                 <Alert style={{backgroundColor: alertColorPicker(category)}}>
                     <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
