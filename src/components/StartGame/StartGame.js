@@ -38,13 +38,24 @@ class StartGame extends Component {
     render() {
         let { team_1, team_2 } = this.state;
         return (
-            <div className="container">
-                <Jumbotron>
-                    <h1>The Great Hat Game</h1>
-                    <p>Enter team details to start the game</p>
-                </Jumbotron>
+            <div style={{
+                backgroundColor: "#84BCDA",
+                minHeight: "100vh",
+                display: "flex",
+                alignItems: "center"
+            }}>
                 <div className="container">
-                    <Form onSubmit={ this.handleSubmit }>
+                    <Jumbotron
+                        className="text-center"
+                        style={{ backgroundColor: "#067BC2",
+                                color: "white"}}>
+                        <h1>The Great Hat Game</h1>
+                        <h3>Enter team names to start the game!</h3>
+                    </Jumbotron>
+                
+                    <Form 
+                        onSubmit={ this.handleSubmit }
+                        style={{ fontSize: "1.3rem"}}>
                         <Form.Group controlId="formBasicTeamOne">
                             <Form.Label>Team 1 Name:</Form.Label>
                             <Form.Control type="text"
@@ -57,7 +68,11 @@ class StartGame extends Component {
                                           onChange={ this.handleTeam2 }
                                           value={ team_2 } />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button 
+                            variant="primary"
+                            type="submit"
+                            style={{ fontSize: "1.3rem",
+                                     backgroundColor: "#067BC2"}}>
                             Submit
                         </Button>
                     </Form>
