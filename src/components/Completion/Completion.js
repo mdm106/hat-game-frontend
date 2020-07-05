@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
-import Button from 'react-bootstrap/Button';
-import Timer from '../Timer/Timer';
-import Alert from 'react-bootstrap/Alert';
-import GameSetUp from '../GameSetUp';
 
 const Completion = ({ id, team_1, team_2, score_1, score_2, complete }) => {
 
