@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import Button from 'react-bootstrap/Button';
 
+import horn from '../../assets/air-horn.mp3';
+import useSound from 'use-sound';
+
 const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
@@ -15,6 +18,8 @@ const Timer = () => {
         setIsActive(false);
     }
 
+    const [play] = useSound(horn);
+
     useEffect(() => {
         let interval = null;
         if(isActive && seconds < 45) {
@@ -22,6 +27,7 @@ const Timer = () => {
                 setSeconds(seconds => seconds + 1);
             }, 1000);
         } else if (isActive && seconds=== 45 ) {
+            play();
             setIsActive(false);
             clearInterval(interval);
         } else if (!isActive && seconds !== 0) {
@@ -49,7 +55,7 @@ const Timer = () => {
             {setTimeShown(seconds)}
           </div>
           <div>
-            {seconds=== 45?  
+            {seconds=== 45 ?  
             <p>Time's Up!</p> : 
             <Button variant="success" onClick={toggle}>
               {isActive ? 'Pause' : 'Start'}
