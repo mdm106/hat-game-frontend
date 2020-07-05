@@ -26,7 +26,7 @@ class GameSetUp extends Component {
     }
 
     render() {
-        let { timerTotal, category } = this.state;
+        let { category } = this.state;
         return (
             <div className="container" style={{ padding: "1rem", border: "4px solid lightGrey", borderRadius: "5px", marginBottom: "1rem"}}>
                 <Form onSubmit={ this.handleSubmit }>

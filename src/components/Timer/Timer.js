@@ -17,11 +17,11 @@ const Timer = ({ timerTotal }) => {
 
     useEffect(() => {
         let interval = null;
-        if(isActive && seconds < timerTotal) {
+        if(isActive && seconds < 45) {
             interval = setInterval(() => {
                 setSeconds(seconds => seconds + 1);
             }, 1000);
-        } else if (isActive && seconds===timerTotal ) {
+        } else if (isActive && seconds=== 45 ) {
             setIsActive(false);
             clearInterval(interval);
         } else if (!isActive && seconds !== 0) {

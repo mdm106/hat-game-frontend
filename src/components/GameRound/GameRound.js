@@ -87,7 +87,7 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                     </Card>
                 </CardGroup>
                 <div className="container">
-                    <Timer timerTotal={45} />
+                    <Timer />
                 </div>
             </div>
             </div>
