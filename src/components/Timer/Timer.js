@@ -50,7 +50,7 @@ const Timer = () => {
           </div>
           <div>
             {seconds=== 45?  
-            <p>Time's Up</p> : 
+            <p>Time's Up!</p> : 
             <Button variant="success" onClick={toggle}>
               {isActive ? 'Pause' : 'Start'}
             </Button>
