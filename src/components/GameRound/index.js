@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import GameRound from "./GameRound";
 
-import { patchScore } from "../../data/actions/api";
+import { patchScore, patchCompleteGame } from "../../data/actions/api";
 import { changeWord } from "../../data/actions/state";
 // mapStateToProps: maps the current state (from the store)
 // to the props that get passed into the wrapped component
@@ -33,6 +33,9 @@ const mapDispatchToProps = dispatch => {
     },
     handlePass: () => {
         dispatch(changeWord())
+    },
+    handleComplete: () => {
+        dispatch(patchCompleteGame())
     }
   };
 };

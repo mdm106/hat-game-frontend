@@ -35,3 +35,16 @@ export const startGame = ( { team_1, team_2, id }) => {
         id,
     }
 }
+
+export const completeGame = ({ complete }) => {
+    return {
+        type: "COMPLETE_GAME",
+        complete,
+    }
+}
+
+export const errorCompleting = () => {
+    return {
+        type: "ERROR_COMPLETING",
+    }
+}

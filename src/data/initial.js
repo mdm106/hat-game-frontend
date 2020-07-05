@@ -15,6 +15,7 @@ const initial = {
     objectNumber: 0,
     category: "",
     categories: [],
+    completeError: false,
 };
 
 export default initial;

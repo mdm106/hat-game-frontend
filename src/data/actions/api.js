@@ -1,6 +1,6 @@
 import axios from "../../axios";
 
-import { setCategory, incrementScore, startGame, updateCategory } from "./state";
+import { setCategory, incrementScore, startGame, updateCategory, completeGame, errorCompleting } from "./state";
 
 export const getWords = (category) => (dispatch, getState) => {
     const isGot = getState().categories.find(element => element===category);
@@ -38,6 +38,18 @@ export const postGame = ({ team_1, team_2 }) => {
             dispatch(startGame(data.data));
         })
     };
+}
+
+export const patchCompleteGame = () => {
+    return (dispatch, getState) => {
+        axios.patch(`games/${getState().id}/complete`, {
+            finish: true,
+        }).then(({ data }) => {
+            dispatch(completeGame(data.data));
+        }).catch(error => {
+            dispatch(errorCompleting())
+        })
+    }
 }
  
 

@@ -128,6 +128,22 @@ const passWordChange = (state) => {
     } 
 }
 
+const completeGameReducer = (state, {complete}) => {
+    return {
+        ...state,
+        complete,
+        completeError: false,
+    }
+}
+
+const errorCompletingReducer = (state) => {
+    return {
+        ...state,
+        completeError: true,
+    }
+}
+
+
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -136,6 +152,8 @@ const reducer = (state, action) => {
       case "CATEGORY_UPDATE": return categoryUpdate(state, action);
       case "INCREMENT_SCORE": return increaseScore(state, action);
       case "PASS": return passWordChange(state);
+      case "COMPLETE_GAME": return completeGameReducer(state, action);
+      case "ERROR_COMPLETING": return errorCompletingReducer(state);
       default: return state;
     }
 }
