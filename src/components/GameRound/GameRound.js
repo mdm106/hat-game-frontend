@@ -53,8 +53,10 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
 
     return (
         <div style={{backgroundColor: backgroundColorPicker(category), 
-                     height: "100vh",
-                     width: "100vw"}}>
+                     minHeight: "100%",
+                     minHeight: "100vh",
+                     display: "flex",
+                     alignItems: "center"}}>
                 <div className="container">
                 <GameSetUp />
                 <h3 style={{textAlign: "center", 
