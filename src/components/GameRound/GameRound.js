@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Card from 'react-bootstrap/Card';
@@ -8,7 +9,7 @@ import Timer from '../Timer/Timer';
 import Alert from 'react-bootstrap/Alert';
 import GameSetUp from '../GameSetUp';
 
-const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber, category, handleIncrement, handlePass, handleComplete }) => {
+const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber, category, handleIncrement, handlePass, handleComplete }) => {
 
     let titlePicker= (category) => {
         switch (category) {
@@ -58,14 +59,26 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                      display: "flex",
                      alignItems: "center"}}>
                 <div className="container">
+
+                {id==="" ? 
+                    <div className="container text-center">
+                        <h3>You have reached the Great Hat Game</h3> 
+                        <h5>Team name registration is required to play the game</h5>
+                        <Link to="/">
+                            <h6>Go back to register your teams</h6>
+                        </Link>
+                    </div> :
+                <>
                 <GameSetUp />
+                {category==="" ? 
+                <h5>Pick a subject to start the game!</h5> :
+                <>
                 <h3 style={{textAlign: "center", 
                             marginBottom: "1rem"}}>
-                    {category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
-                {category === "" ? null :
+                    {"Subject: " + titlePicker(category)}</h3>
                 <Alert style={{backgroundColor: alertColorPicker(category)}}>
                     <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
-                </Alert> }
+                </Alert> 
                 <CardGroup>
                     <Card>
                         <Card.Body style={{backgroundColor: "lightGrey"}}>
@@ -73,8 +86,14 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                             <Card.Text className="display-1">{score_1}</Card.Text>
                         </Card.Body>
                         <Card.Footer style={{backgroundColor: alertColorPicker(category)}}>
-                            <Button variant="primary" onClick={() => handleIncrement(1)}>Correct</Button>{' '}
-                            <Button variant="danger" onClick={handlePass}>Pass</Button>
+                            <Button 
+                                variant="primary"
+                                onClick={() => handleIncrement(1)}>
+                                Correct</Button>{' '}
+                            <Button
+                                variant="danger"
+                                onClick={handlePass}>
+                                Pass</Button>
                         </Card.Footer>
                     </Card>
                     <Card>
@@ -83,8 +102,12 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                             <Card.Text className="display-1">{score_2}</Card.Text>
                         </Card.Body>
                         <Card.Footer style={{backgroundColor: alertColorPicker(category)}}>
-                            <Button variant="primary" onClick={() => handleIncrement(2)}>Correct</Button>{' '}
-                            <Button variant="danger" onClick={handlePass}>Pass</Button>
+                            <Button
+                                variant="primary"
+                                onClick={() => handleIncrement(2)}>Correct</Button>{' '}
+                            <Button
+                                variant="danger"
+                                onClick={handlePass}>Pass</Button>
                         </Card.Footer>
                     </Card>
                 </CardGroup>
@@ -96,6 +119,8 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                             onClick={ handleComplete }>
                         Complete Game!</Button>
                 </div>
+                </> }
+        </> }
             </div>
             </div>
     )
