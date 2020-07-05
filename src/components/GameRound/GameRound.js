@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
@@ -51,6 +51,10 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
         }
     }
 
+    const [wordsOn, setWordsOn] = useState(false);
+
+    const wordsOnSelect = () => setWordsOn(!wordsOn);
+
 
     return (
         <div style={{backgroundColor: backgroundColorPicker(category), 
@@ -76,9 +80,20 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
                 <h3 style={{textAlign: "center", 
                             marginBottom: "1rem"}}>
                     {"Subject: " + titlePicker(category)}</h3>
-                <Alert style={{backgroundColor: alertColorPicker(category)}}>
-                    <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
+
+                <div className="text-center mb-4">
+                    <Button variant="danger"
+                            onClick={ wordsOnSelect }>
+                    {wordsOn ? "Hide words!" : "Reveal words!"}</Button>
+                </div>
+
+                {wordsOn ? 
+                <Alert style={{backgroundColor: alertColorPicker(category)}}> 
+                    <h3 style={{textAlign: "center", textTransform: "capitalize"}}>
+                        {categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}
+                    </h3> 
                 </Alert> 
+                : null}
                 <CardGroup>
                     <Card>
                         <Card.Body style={{backgroundColor: "lightGrey"}}>
