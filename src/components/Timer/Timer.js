@@ -43,7 +43,8 @@ const Timer = () => {
     }    
 
     return (
-        <div className="container">
+        <div className="container text-center mt-4" style={{fontSize: "3rem"}}>
+            <h3>Timer</h3>
           <div>
             {setTimeShown(seconds)}
           </div>
