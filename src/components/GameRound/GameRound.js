@@ -35,9 +35,10 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
             <div className="container">
                 <GameSetUp />
                 <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
+                {category === "" ? null :
                 <Alert variant="info">
                     <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
-                </Alert>
+                </Alert> }
                 <CardGroup>
                     <Card>
                         <Card.Body>
