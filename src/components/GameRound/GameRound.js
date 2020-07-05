@@ -30,32 +30,53 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
         }
     }
 
+    let backgroundColorPicker = (category) => {
+        switch (category) {
+            case 1: return "#ECC30B"
+            case 2: return "#D56062"
+            case 3: return "#067BC2"
+            case 4: return "#F37748"
+            default: return "#84BCDA";
+        }
+    }
+
+    let alertColorPicker = (category) => {
+        switch (category) {
+            case 1: return "#0bb0ec"
+            case 2: return "#60d5d1"
+            case 3: return "#06c24e"
+            case 4: return "#48e2f3"
+            default: return "grey";
+        }
+    }
+
 
     return (
-            <div className="container">
+        <div style={{backgroundColor: backgroundColorPicker(category), height: "100vh", width: "100vw"}}>
+                <div className="container">
                 <GameSetUp />
                 <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
                 {category === "" ? null :
-                <Alert variant="info">
+                <Alert style={{backgroundColor: alertColorPicker(category)}}>
                     <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
                 </Alert> }
                 <CardGroup>
                     <Card>
-                        <Card.Body>
+                        <Card.Body style={{backgroundColor: "lightGrey"}}>
                             <Card.Title>Team 1</Card.Title>
                             <Card.Text className="display-1">{score_1}</Card.Text>
                         </Card.Body>
-                        <Card.Footer>
+                        <Card.Footer style={{backgroundColor: alertColorPicker(category)}}>
                             <Button variant="primary" onClick={() => handleIncrement(1)}>Correct</Button>{' '}
                             <Button variant="danger" onClick={handlePass}>Pass</Button>
                         </Card.Footer>
                     </Card>
                     <Card>
-                        <Card.Body>
+                        <Card.Body style={{backgroundColor: "lightGrey"}}>
                             <Card.Title>Team 2</Card.Title>
                             <Card.Text className="display-1">{score_2}</Card.Text>
                         </Card.Body>
-                        <Card.Footer>
+                        <Card.Footer style={{backgroundColor: alertColorPicker(category)}}>
                             <Button variant="primary" onClick={() => handleIncrement(2)}>Correct</Button>{' '}
                             <Button variant="danger" onClick={handlePass}>Pass</Button>
                         </Card.Footer>
@@ -64,6 +85,7 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
                 <div className="container">
                     <Timer timerTotal={45} />
                 </div>
+            </div>
             </div>
     )
 }
