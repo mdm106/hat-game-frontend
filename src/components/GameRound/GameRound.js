@@ -30,39 +30,40 @@ const GameRound = ({ team_1, team_2, score_1, score_2, science, celebrities, geo
         }
     }
 
+
     return (
-        <>
-            <GameSetUp />
-            <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
-            <Alert variant="info">
-                <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
-            </Alert>
-            <CardGroup>
-                <Card>
-                    <Card.Body>
-                        <Card.Title>Team 1</Card.Title>
-                        <Card.Text className="display-1">{score_1}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Button variant="primary" onClick={() => handleIncrement(1)}>Correct</Button>{' '}
-                        <Button variant="danger" onClick={handlePass}>Pass</Button>
-                    </Card.Footer>
-                </Card>
-                <Card>
-                    <Card.Body>
-                        <Card.Title>Team 2</Card.Title>
-                        <Card.Text className="display-1">{score_2}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Button variant="primary" onClick={() => handleIncrement(2)}>Correct</Button>{' '}
-                        <Button variant="danger" onClick={handlePass}>Pass</Button>
-                    </Card.Footer>
-                </Card>
-            </CardGroup>
             <div className="container">
-                <Timer timerTotal={45} />
+                <GameSetUp />
+                <h3>{category !== "" ? "Subject: " + titlePicker(category) : "No subject chosen"}</h3>
+                <Alert variant="info">
+                    <h3 style={{textAlign: "center", textTransform: "capitalize"}}>{categoryPicker(category, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber)}</h3>
+                </Alert>
+                <CardGroup>
+                    <Card>
+                        <Card.Body>
+                            <Card.Title>Team 1</Card.Title>
+                            <Card.Text className="display-1">{score_1}</Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <Button variant="primary" onClick={() => handleIncrement(1)}>Correct</Button>{' '}
+                            <Button variant="danger" onClick={handlePass}>Pass</Button>
+                        </Card.Footer>
+                    </Card>
+                    <Card>
+                        <Card.Body>
+                            <Card.Title>Team 2</Card.Title>
+                            <Card.Text className="display-1">{score_2}</Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <Button variant="primary" onClick={() => handleIncrement(2)}>Correct</Button>{' '}
+                            <Button variant="danger" onClick={handlePass}>Pass</Button>
+                        </Card.Footer>
+                    </Card>
+                </CardGroup>
+                <div className="container">
+                    <Timer timerTotal={45} />
+                </div>
             </div>
-        </>
     )
 }
 
