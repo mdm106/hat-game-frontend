@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
@@ -58,7 +57,6 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
 
     return (
         <div style={{backgroundColor: backgroundColorPicker(category), 
-                     minHeight: "100vh",
                      minHeight: "100vh",
                      display: "flex",
                      alignItems: "center"}}>
