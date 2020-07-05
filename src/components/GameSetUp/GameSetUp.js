@@ -28,25 +28,23 @@ class GameSetUp extends Component {
     render() {
         let { timerTotal, category } = this.state;
         return (
-            <>
-                <div className="container">
-                    <Form onSubmit={ this.handleSubmit }>
-                        <Form.Group controlId="exampleForm.ControlSelect1">
-                            <Form.Label>Select subject:</Form.Label>
-                            <Form.Control as="select" value={category} onChange={this.handleCategory} style={{backgroundColor: "lightGrey"}}>
-                                <option value={""}></option>
-                                <option value={"1"}>Science</option>
-                                <option value={"2"}>Celebrities</option>
-                                <option value={"3"}>Geography</option>
-                                <option value={"4"}>Object</option>
-                            </Form.Control>
-                        </Form.Group>
-                        <Button variant="primary" type="submit" disabled={category === ""}>
-                            Submit
-                        </Button>
-                    </Form>
-                </div>
-            </>
+            <div className="container" style={{ padding: "1rem", border: "4px solid lightGrey", borderRadius: "5px", marginBottom: "1rem"}}>
+                <Form onSubmit={ this.handleSubmit }>
+                    <Form.Group controlId="exampleForm.ControlSelect1">
+                        <Form.Label>Select subject:</Form.Label>
+                        <Form.Control as="select" value={category} onChange={this.handleCategory} style={{backgroundColor: "lightGrey"}}>
+                            <option value={""}></option>
+                            <option value={"1"}>Science</option>
+                            <option value={"2"}>Celebrities</option>
+                            <option value={"3"}>Geography</option>
+                            <option value={"4"}>Object</option>
+                        </Form.Control>
+                    </Form.Group>
+                    <Button variant="primary" type="submit" disabled={category === ""}>
+                        Submit
+                    </Button>
+                </Form>
+            </div>
         );
     }
 }
