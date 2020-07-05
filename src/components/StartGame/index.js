@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => {
     handleStartGame: (data) => {
         dispatch(postGame(data));
 
-        history.push("/round1");
+        history.push("/round");
     }
   };
 };

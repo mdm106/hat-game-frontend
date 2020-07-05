@@ -1,4 +1,5 @@
 import axios from "../../axios";
+import history from "../../history";
 
 import { setCategory, incrementScore, startGame, updateCategory, completeGame, errorCompleting } from "./state";
 
@@ -46,6 +47,7 @@ export const patchCompleteGame = () => {
             finish: true,
         }).then(({ data }) => {
             dispatch(completeGame(data.data));
+            history.push("/results")
         }).catch(error => {
             dispatch(errorCompleting())
         })
