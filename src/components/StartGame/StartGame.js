@@ -38,7 +38,7 @@ class StartGame extends Component {
     render() {
         let { team_1, team_2 } = this.state;
         return (
-            <>
+            <div className="container">
                 <Jumbotron>
                     <h1>The Great Hat Game</h1>
                     <p>Enter team details to start the game</p>
@@ -62,7 +62,7 @@ class StartGame extends Component {
                         </Button>
                     </Form>
                 </div>
-            </>
+            </div>
         );
     }
 }
