@@ -1,5 +1,3 @@
-import initial from './initial';
-
 const gameStart = (state, {team_1, team_2, id}) => {
     return {
         ...state,
