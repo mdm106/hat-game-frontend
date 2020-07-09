@@ -32,8 +32,14 @@ const Completion = ({ id, team_1, team_2, score_1, score_2, complete }) => {
                 { winner === "draw" ?
                 <h1>It's a draw! Well done to both teams!</h1> : 
                 <h1>{`${winner} are the winners! Great job!`}</h1> } 
+            </div>}
+            <div className="container">
+                <Link to ="/">
+                    <button className="btn btn-danger">
+                        Go back to home
+                    </button>
+                </Link>
             </div>
-            }
         </div>
     )
 }
