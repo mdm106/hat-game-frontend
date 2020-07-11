@@ -23,6 +23,7 @@ const Completion = ({ id, team_1, team_2, score_1, score_2, complete }) => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            overflowY: "hidden",
         }}> 
             {!complete ? 
             <div className="container text-center mb-4">

@@ -60,7 +60,8 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
             backgroundColor: backgroundColorPicker(category),
             minHeight: "100vh",
             display: "flex",
-            alignItems: "center"
+            alignItems: "center",
+            overflowY: "hidden",
         }}>
             <div className="container">
 
