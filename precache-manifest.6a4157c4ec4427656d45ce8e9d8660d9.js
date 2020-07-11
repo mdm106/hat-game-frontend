@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b02f46df8996c6f96189ee8a8cc17ee6",
+    "revision": "583e0774cbf082b29b6ca7aed67cc37b",
     "url": "/hat-game-frontend/index.html"
   },
   {
