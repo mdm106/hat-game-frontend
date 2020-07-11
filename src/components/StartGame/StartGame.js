@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
@@ -42,9 +43,14 @@ class StartGame extends Component {
             <div style={{
                 backgroundColor: "#84BCDA",
                 minHeight: "100vh",
-                display: "flex",
-                alignItems: "center"
             }}>
+                <div className="container text-right">
+                    <Link to ="/game-history">
+                        <button className="btn btn-info m-1">
+                            View previous game results
+                        </button>
+                    </Link>
+                </div>
                 <div className="container">
                     <Jumbotron
                         className="text-center"
