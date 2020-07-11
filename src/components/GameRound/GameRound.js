@@ -8,7 +8,7 @@ import Timer from '../Timer/Timer';
 import Alert from 'react-bootstrap/Alert';
 import GameSetUp from '../GameSetUp';
 
-const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber, category, handleIncrement, handlePass, handleComplete }) => {
+const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities, geography, object, scienceNumber, celebrityNumber, geographyNumber, objectNumber, category, handleIncrement, handlePass, handleComplete, completeError }) => {
 
     let titlePicker = (category) => {
         switch (category) {
@@ -135,6 +135,8 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
                                     <Button variant="dark"
                                         onClick={handleComplete}>
                                         Complete Game!</Button>
+                                    {completeError ?
+                                    <h6>Error submitting game, please try again.</h6> : null}
                                 </div>
                             </>}
                     </>}
