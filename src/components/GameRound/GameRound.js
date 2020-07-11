@@ -101,7 +101,7 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
                                 <CardGroup>
                                     <Card>
                                         <Card.Body style={{ backgroundColor: "lightGrey" }}>
-                                            <Card.Title>Team 1</Card.Title>
+                                            <Card.Title>{team_1}</Card.Title>
                                             <Card.Text className="display-1">{score_1}</Card.Text>
                                         </Card.Body>
                                         <Card.Footer style={{ backgroundColor: alertColorPicker(category) }}>
@@ -117,7 +117,7 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
                                     </Card>
                                     <Card>
                                         <Card.Body style={{ backgroundColor: "lightGrey" }}>
-                                            <Card.Title>Team 2</Card.Title>
+                                            <Card.Title>{team_2}</Card.Title>
                                             <Card.Text className="display-1">{score_2}</Card.Text>
                                         </Card.Body>
                                         <Card.Footer style={{ backgroundColor: alertColorPicker(category) }}>
