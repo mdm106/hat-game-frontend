@@ -43,6 +43,7 @@ class StartGame extends Component {
             <div style={{
                 backgroundColor: "#84BCDA",
                 minHeight: "100vh",
+                overflowY: "hidden",
             }}>
                 <div className="container text-right">
                     <Link to ="/game-history">
