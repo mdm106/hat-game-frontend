@@ -69,8 +69,9 @@ const GameRound = ({ id, team_1, team_2, score_1, score_2, science, celebrities,
                         <h3>You have reached the Great Hat Game</h3>
                         <h5>Team name registration is required to play the game</h5>
                         <Link to="/">
-                            <h6>Go back to register your teams</h6>
+                            <h6>Not registered? Go back to register your teams</h6>
                         </Link>
+                        <h6>If you have registered, please wait whilst game loads</h6>
                     </div> :
                     <>
                         <GameSetUp />
