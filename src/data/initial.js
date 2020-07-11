@@ -16,6 +16,7 @@ const initial = {
     category: "",
     categories: [],
     completeError: false,
+    gameHistory: [],
 };
 
 export default initial;

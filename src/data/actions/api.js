@@ -1,7 +1,7 @@
 import axios from "../../axios";
 import history from "../../history";
 
-import { setCategory, incrementScore, startGame, updateCategory, completeGame, errorCompleting } from "./state";
+import { setCategory, incrementScore, startGame, updateCategory, completeGame, errorCompleting, saveGames } from "./state";
 
 export const getWords = (category) => (dispatch, getState) => {
     const isGot = getState().categories.find(element => element===category);
@@ -55,3 +55,10 @@ export const patchCompleteGame = () => {
 }
  
 
+export const getGames = () => {
+    return (dispatch) => {
+        return axios.get("/games").then(({ data }) => {
+            dispatch(saveGames(data.data));
+        })
+    }
+}

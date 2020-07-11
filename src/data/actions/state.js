@@ -69,3 +69,10 @@ export const errorCompleting = () => {
         type: "ERROR_COMPLETING",
     }
 }
+
+export const saveGames = (data) => {
+    return {
+        type: "SAVE_GAMES",
+        gameHistory: data,
+    };
+};

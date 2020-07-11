@@ -8,7 +8,8 @@ import {Router,
 
 import StartGame from "./components/StartGame";
 import GameRound from "./components/GameRound";
-import Completion from "./components/Completion"
+import Completion from "./components/Completion";
+import GameHistory from "./components/GameHistory";
 
 const App = () => (
   <React.Fragment>
@@ -22,6 +23,9 @@ const App = () => (
         </Route>
         <Route exact path="/results">
           <Completion />
+        </Route>
+        <Route exact path="/game-history">
+          <GameHistory />
         </Route>
       </Switch>
     </Router>

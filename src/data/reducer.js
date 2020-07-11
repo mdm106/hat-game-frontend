@@ -120,7 +120,12 @@ const errorCompletingReducer = (state) => {
     }
 }
 
-
+const saveGamesReducer = (state, { gameHistory }) => {
+    return {
+        ...state,
+        gameHistory,
+    }
+}
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -131,6 +136,7 @@ const reducer = (state, action) => {
       case "PASS": return passWordChange(state);
       case "COMPLETE_GAME": return completeGameReducer(state, action);
       case "ERROR_COMPLETING": return errorCompletingReducer(state);
+      case "SAVE_GAMES": return saveGamesReducer(state, action);
       default: return state;
     }
 }
