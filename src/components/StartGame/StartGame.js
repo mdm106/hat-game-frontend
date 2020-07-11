@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 
 class StartGame extends Component {
     constructor(props) {
@@ -71,10 +72,15 @@ class StartGame extends Component {
                         <Button 
                             variant="primary"
                             type="submit"
+                            disabled={ team_1 === "" || team_2 === "" || team_1 === team_2 }
                             style={{ fontSize: "1.3rem",
                                      backgroundColor: "#067BC2"}}>
                             Submit
                         </Button>
+                        { team_1 !== "" && team_1 === team_2 ?
+                        <Alert variant="danger" className="mt-3">
+                            Duplicate team names, please amend
+                        </Alert> : null }
                     </Form>
                 </div>
             </div>
