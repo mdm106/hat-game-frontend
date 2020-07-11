@@ -28,7 +28,7 @@ class GameSetUp extends Component {
     render() {
         let { category } = this.state;
         return (
-            <div className="container" style={{ padding: "1rem", border: "4px solid lightGrey", borderRadius: "5px", marginBottom: "1rem"}}>
+            <div className="container mt-2" style={{ padding: "1rem", border: "4px solid lightGrey", borderRadius: "5px", marginBottom: "1rem"}}>
                 <Form onSubmit={ this.handleSubmit }>
                     <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Label>Select subject:</Form.Label>
