@@ -22,6 +22,8 @@ class StartGame extends Component {
         this.handleTeam2 = this.handleTeam2.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.handleResetClicked = this.handleResetClicked.bind(this);
     }
 
     handleTeam1(e) {
@@ -35,6 +37,11 @@ class StartGame extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.handleStartGame({ ...this.state });
+    }
+
+    handleResetClicked() {
+        this.setState({ team_1: "", team_2: ""});
+        this.props.handleReset();
     }
 
     render() {
@@ -89,6 +96,14 @@ class StartGame extends Component {
                             Duplicate team names, please amend
                         </Alert> : null }
                     </Form>
+                    <Button 
+                            className="mt-2"
+                            variant="danger"
+                            type="click"
+                            style={{ fontSize: "1.3rem" }}
+                            onClick= { this.handleResetClicked }>
+                            Reset
+                    </Button>
                 </div>
             </div>
         );

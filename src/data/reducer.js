@@ -1,3 +1,5 @@
+import initial from "./initial";
+
 const gameStart = (state, {team_1, team_2, id}) => {
     return {
         ...state,
@@ -127,6 +129,12 @@ const saveGamesReducer = (state, { gameHistory }) => {
     }
 }
 
+const resetGameReducer = (state) => {
+    return {
+        ...initial,
+    }
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
       case "START_GAME": return gameStart(state, action);
@@ -137,6 +145,7 @@ const reducer = (state, action) => {
       case "COMPLETE_GAME": return completeGameReducer(state, action);
       case "ERROR_COMPLETING": return errorCompletingReducer(state);
       case "SAVE_GAMES": return saveGamesReducer(state, action);
+      case "RESET_GAME": return resetGameReducer(state);
       default: return state;
     }
 }

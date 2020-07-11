@@ -76,3 +76,9 @@ export const saveGames = (data) => {
         gameHistory: data,
     };
 };
+
+export const resetGame = (data) => {
+    return {
+        type: "RESET_GAME",
+    }
+}

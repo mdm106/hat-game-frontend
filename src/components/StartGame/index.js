@@ -4,6 +4,7 @@ import StartGame from "./StartGame";
 
 import history from "../../history";
 import { postGame } from "../../data/actions/api";
+import { resetGame } from "../../data/actions/state";
 
 const mapStateToProps = ({ team_1, team_2 }) => {
     return {
@@ -18,6 +19,9 @@ const mapDispatchToProps = dispatch => {
         dispatch(postGame(data));
 
         history.push("/round");
+    },
+    handleReset: () => {
+      dispatch(resetGame());
     }
   };
 };
