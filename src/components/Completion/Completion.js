@@ -21,19 +21,20 @@ const Completion = ({ id, team_1, team_2, score_1, score_2, complete }) => {
             backgroundColor: "#84BCDA",
             minHeight: "100vh",
             display: "flex",
-            alignItems: "center"
+            flexDirection: "column",
+            justifyContent: "center",
         }}> 
             {!complete ? 
-            <div className="container">
+            <div className="container text-center mb-4">
                 <h1>Opps, your game isn't complete!</h1>
             </div> : 
 
-            <div className="container">
+            <div className="container text-center mb-4">
                 { winner === "draw" ?
                 <h1>It's a draw! Well done to both teams!</h1> : 
                 <h1>{`${winner} are the winners! Great job!`}</h1> } 
             </div>}
-            <div className="container">
+            <div className="container text-center">
                 <Link to ="/">
                     <button className="btn btn-danger">
                         Go back to home
