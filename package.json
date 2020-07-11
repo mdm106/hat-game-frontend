@@ -16,6 +16,7 @@
     "react-timecode": "^1.1.23",
     "react-timer-wrapper": "^0.4.0",
     "redux": "^4.0.5",
+    "redux-localstorage": "^0.4.1",
     "redux-thunk": "^2.3.0",
     "typescript": "^3.9.5",
     "use-sound": "^1.0.2"
