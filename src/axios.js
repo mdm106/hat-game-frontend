@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: "http://hat-game-backend/api",
+    baseURL: "https://immense-earth-89289.herokuapp.com/api",
     headers: {
         Accept: "application/json",
     },
