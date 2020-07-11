@@ -36,8 +36,13 @@ const Completion = ({ id, team_1, team_2, score_1, score_2, complete }) => {
             </div>}
             <div className="container text-center">
                 <Link to ="/">
-                    <button className="btn btn-danger">
+                    <button className="btn btn-danger m-1">
                         Go back to home
+                    </button>
+                </Link>
+                <Link to ="/game-history">
+                    <button className="btn btn-info m-1">
+                        View previous game results
                     </button>
                 </Link>
             </div>
