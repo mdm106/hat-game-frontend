@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hat-game-frontend/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/hat-game-frontend/static/js/main.4177351f.chunk.js",
-    "main.js.map": "/hat-game-frontend/static/js/main.4177351f.chunk.js.map",
+    "main.js": "/hat-game-frontend/static/js/main.94c7db51.chunk.js",
+    "main.js.map": "/hat-game-frontend/static/js/main.94c7db51.chunk.js.map",
     "runtime-main.js": "/hat-game-frontend/static/js/runtime-main.13f53933.js",
     "runtime-main.js.map": "/hat-game-frontend/static/js/runtime-main.13f53933.js.map",
     "static/js/2.bdd14253.chunk.js": "/hat-game-frontend/static/js/2.bdd14253.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.20420590.chunk.js": "/hat-game-frontend/static/js/3.20420590.chunk.js",
     "static/js/3.20420590.chunk.js.map": "/hat-game-frontend/static/js/3.20420590.chunk.js.map",
     "index.html": "/hat-game-frontend/index.html",
-    "precache-manifest.f7e06fe447a8e185005fae2695d2fe23.js": "/hat-game-frontend/precache-manifest.f7e06fe447a8e185005fae2695d2fe23.js",
+    "precache-manifest.92fd99fd24cfe88d0278974f54064461.js": "/hat-game-frontend/precache-manifest.92fd99fd24cfe88d0278974f54064461.js",
     "service-worker.js": "/hat-game-frontend/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/hat-game-frontend/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.bdd14253.chunk.js.LICENSE.txt": "/hat-game-frontend/static/js/2.bdd14253.chunk.js.LICENSE.txt",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.13f53933.js",
     "static/js/2.bdd14253.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.4177351f.chunk.js"
+    "static/js/main.94c7db51.chunk.js"
   ]
 }

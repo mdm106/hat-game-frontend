@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hat-game-frontend/precache-manifest.f7e06fe447a8e185005fae2695d2fe23.js"
+  "/hat-game-frontend/precache-manifest.92fd99fd24cfe88d0278974f54064461.js"
 );
 
 self.addEventListener('message', (event) => {

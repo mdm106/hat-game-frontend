@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c54c311068a0d50da41b1620f3fa092a",
+    "revision": "b02f46df8996c6f96189ee8a8cc17ee6",
     "url": "/hat-game-frontend/index.html"
   },
   {
-    "revision": "a41194bd48988a445ea4",
+    "revision": "45a0677e4b5d084d351f",
     "url": "/hat-game-frontend/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hat-game-frontend/static/js/3.20420590.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a41194bd48988a445ea4",
-    "url": "/hat-game-frontend/static/js/main.4177351f.chunk.js"
+    "revision": "45a0677e4b5d084d351f",
+    "url": "/hat-game-frontend/static/js/main.94c7db51.chunk.js"
   },
   {
     "revision": "cd920b7f530081637236",
