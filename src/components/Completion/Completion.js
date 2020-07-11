@@ -25,7 +25,7 @@ const Completion = ({ id, team_1, team_2, score_1, score_2, complete }) => {
         }}> 
             {!complete ? 
             <div className="container">
-                <h1>Opps, looks like your game isn't complete!</h1>
+                <h1>Opps, your game isn't complete!</h1>
             </div> : 
 
             <div className="container">
